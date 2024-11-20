@@ -13,8 +13,6 @@ public class Decode {
         byte[] decodedBytes = new byte[encodedBytes.length/16];
         int counter = 0;
 
-        byte[] originBytes = ioBytes.readFile("test", "jpg");
-
         for(int i = 0; i < encodedBytes.length - 16; i+=16){
             byte[] ss = Arrays.copyOfRange(encodedBytes, i, i+16);
             try {
