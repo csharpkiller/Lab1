@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Prepare prepare = new Prepare();
         prepare.createDictionary("dic123");
+        prepare.expendFile("test");
         Encode encode = new Encode();
         encode.encode("dic123", "dic123Encoded");
         encode.encode("testExpended", "testExpendedEncoded");
