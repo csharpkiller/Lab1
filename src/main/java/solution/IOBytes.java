@@ -31,10 +31,8 @@ public class IOBytes {
             default:{
                 try (FileOutputStream fos = new FileOutputStream(fileName)) {
                     fos.write(bytes);
-                } catch (FileNotFoundException e) {
-                    throw new RuntimeException(e);
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    System.out.println("wtf");
                 }
 
             }
@@ -44,10 +42,8 @@ public class IOBytes {
     public void writeBytes(byte[] bytes, String fileName){
         try (FileOutputStream fos = new FileOutputStream(fileName)) {
             fos.write(bytes);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("ЭэЭЭыфэыфаэф");
         }
     }
 
@@ -84,7 +80,8 @@ public class IOBytes {
             byte[] array = Files.readAllBytes(Path.of(new File(fileName).getPath()));
             return array;
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Не удалось прочитать файл(((");
         }
+        return new byte[0];
     }
 }

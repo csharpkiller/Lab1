@@ -15,9 +15,7 @@ public class Encode {
         byte[] key = null;
         try {
             key = MessageDigest.getInstance("SHA-256").digest(keyString.getBytes("UTF-8"));
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        } catch (UnsupportedEncodingException e) {
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
         secretKeySpec = new SecretKeySpec(key, "AES");
